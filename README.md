@@ -23,9 +23,17 @@ This project deploys n8n (workflow automation tool) on a dedicated AWS EC2 insta
    ```
 4. Edit `.env.local` with your configuration:
    - `DOMAIN_NAME`: Your domain name (e.g., example.com)
+   - `EC2_INSTANCE_TYPE`: EC2 instance type for the n8n server, defaults to `t3.micro`
+   - `N8N_DATABASE_MODE`: `rds` for PostgreSQL on RDS or `sqlite` for a local database on the EC2 instance
    - `N8N_BASIC_AUTH_USER`: Username for n8n basic auth
    - `N8N_BASIC_AUTH_PASSWORD`: Password for n8n basic auth
    - `N8N_ENCRYPTION_KEY`: 32-character encryption key for n8n
+
+   Example:
+   ```bash
+   # Database mode: rds or sqlite
+   N8N_DATABASE_MODE=sqlite
+   ```
 
 ## Deployment
 
